@@ -226,6 +226,19 @@
           <tarLongFileMode>gnu</tarLongFileMode>
         </configuration>
       </plugin>
+      <!-- maven-bundle-plugin:1.4.3 (inherited from commons-parent:20) cannot
+           parse Java 8 class files; skip it since we only need the test suite
+           for AOT cache recording, not an OSGi manifest. -->
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>bundle-manifest</id>
+            <phase>none</phase>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
   <reporting>
