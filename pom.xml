@@ -316,7 +316,7 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
             <configuration>
-              <argLine>-XX:AOTCacheOutput=${project.basedir}/cache.aot</argLine>
+              <argLine>-Xlog:aot+map=trace,aot+map+oops=trace,aot=warning:file=aot.map:none:filesize=0 -XX:AOTCacheOutput=${project.basedir}/cache.aot</argLine>
               <forkCount>1</forkCount>
               <reuseForks>true</reuseForks>
               <testFailureIgnore>true</testFailureIgnore>
